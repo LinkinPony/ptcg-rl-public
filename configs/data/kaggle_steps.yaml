@@ -1,0 +1,16 @@
+# @package _global_
+replay_root: data/external/kaggle_top_episodes_daily
+dates: []
+output_dir: outputs/kaggle_steps/latest
+max_episodes: null
+rows_per_shard: 50000
+drop_forced_actions: true
+normalize_unordered_actions: true
+fast_prefix_bytes: 65536
+parser_chunk_size: 1048576
+compression: zstd
+replay_workers: 1
+hydra:
+  run:
+    dir: .
+  output_subdir: null

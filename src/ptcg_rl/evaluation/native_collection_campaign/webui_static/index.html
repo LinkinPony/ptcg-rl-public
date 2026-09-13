@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark" />
+    <title>PTCG Final Selection Monitor</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <div class="shell">
+      <header class="topbar">
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true">P</span>
+          <div>
+            <p class="eyebrow">PTCG · H200 GAUNTLET</p>
+            <h1>最终提交筛选</h1>
+          </div>
+        </div>
+        <div class="live-status">
+          <span id="live-dot" class="live-dot"></span>
+          <span id="live-label">连接中</span>
+          <time id="updated-at">—</time>
+        </div>
+      </header>
+
+      <main>
+        <section id="error-banner" class="error-banner hidden" role="alert"></section>
+
+        <section class="hero panel">
+          <div class="hero-copy">
+            <p id="stage-id" class="eyebrow">CAMPAIGN</p>
+            <h2>高通量增量对打</h2>
+            <p class="muted">
+              只读取原子发布的 Parquet 分片；排名为实时初步结果，最终选择以完整评分产物为准。
+            </p>
+          </div>
+          <div class="progress-block">
+            <div class="progress-meta">
+              <strong id="progress-percent">0.0%</strong>
+              <span id="progress-count">0 / 0</span>
+            </div>
+            <div class="progress-track" aria-label="campaign progress">
+              <div id="progress-fill" class="progress-fill"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="metric-grid" aria-label="campaign metrics">
+          <article class="metric-card panel">
+            <span>有效吞吐</span>
+            <strong id="throughput">—</strong>
+            <small>包含模型切换 · games / second</small>
+          </article>
+          <article class="metric-card panel">
+            <span>预计剩余</span>
+            <strong id="eta">—</strong>
+            <small id="remaining">等待首批结果</small>
+          </article>
+          <article class="metric-card panel">
+            <span>有效对局</span>
+            <strong id="resolved">—</strong>
+            <small id="unresolved">—</small>
+          </article>
+          <article class="metric-card panel">
+            <span>任务队列</span>
+            <strong id="task-count">—</strong>
+            <small id="part-count">—</small>
+          </article>
+        </section>
+
+        <section>
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">ACCELERATORS</p>
+              <h2>H200 执行状态</h2>
+            </div>
+          </div>
+          <div id="device-grid" class="device-grid"></div>
+        </section>
+
+        <section class="panel table-panel">
+          <div class="section-heading inset">
+            <div>
+              <p class="eyebrow">PROVISIONAL</p>
+              <h2>候选 Bundle 排名</h2>
+            </div>
+            <span class="notice">95% 区间仅用于监测采样稳定性</span>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Checkpoint</th>
+                  <th>Deck No.</th>
+                  <th>Score</th>
+                  <th>95% CI</th>
+                  <th>W / D / L / U</th>
+                  <th>Seat 0 / 1</th>
+                  <th>Games</th>
+                </tr>
+              </thead>
+              <tbody id="standings-body"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="split-grid">
+          <article class="panel table-panel">
+            <div class="section-heading inset compact">
+              <div>
+                <p class="eyebrow">MATCHUPS</p>
+                <h2>对局切片</h2>
+              </div>
+              <label class="select-label">
+                候选
+                <select id="candidate-select"></select>
+              </label>
+            </div>
+            <div class="table-wrap compact-table">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Opponent pilot</th>
+                    <th>Deck No.</th>
+                    <th>Score</th>
+                    <th>W / D / L / U</th>
+                    <th>N</th>
+                  </tr>
+                </thead>
+                <tbody id="cells-body"></tbody>
+              </table>
+            </div>
+          </article>
+
+          <article class="panel terminal-panel">
+            <div class="section-heading inset compact">
+              <div>
+                <p class="eyebrow">INTEGRITY</p>
+                <h2>终局原因</h2>
+              </div>
+            </div>
+            <div id="terminal-list" class="terminal-list"></div>
+          </article>
+        </section>
+
+        <section class="panel table-panel">
+          <div class="section-heading inset">
+            <div>
+              <p class="eyebrow">QUEUE</p>
+              <h2>增量任务</h2>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Device</th>
+                  <th>Candidate</th>
+                  <th>Opponent</th>
+                  <th>State</th>
+                  <th>Progress</th>
+                  <th>Rate</th>
+                </tr>
+              </thead>
+              <tbody id="tasks-body"></tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <span id="plan-fingerprint">Plan —</span>
+        <span>read-only · localhost</span>
+      </footer>
+    </div>
+    <script src="/static/app.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,110 @@
+# @package _global_
+data:
+  manifest_path: outputs/kaggle_steps/full/manifest.json
+  shard_paths: []
+  batch_size: 192
+  read_batch_size: 2048
+  shuffle_shards: true
+  shuffle_buffer_rows: 8192
+  validation_fraction: 0.05
+  split_column: null
+  drop_last: false
+  num_workers: 0
+  prefetch_batches: 2
+  pin_memory: false
+  sample_weights:
+    enabled: false
+    sample_weight_column: null
+    win_weight: 1.0
+    loss_weight: 1.0
+    draw_weight: 1.0
+    other_weight: 1.0
+    min_weight: 0.1
+    max_weight: 10.0
+  belief:
+    enabled: true
+    top_k: 16
+    deck_signature_summary_path: null
+    prior_top_n: 200
+    prior_min_games: 1
+    prior_match_bonus: 0.35
+  probe_sidecar_dir: null
+  probe_feature_dropout: 0.1
+  tensor_cache_dir: null
+model:
+  state_encoder:
+    d_model: 768
+    num_layers: 12
+    attention_heads: 12
+    feedforward_dim: 3072
+    dropout: 0.0
+    norm_first: true
+  policy:
+    d_model: 768
+    hidden_dim: null
+    dropout: 0.0
+    max_attack_id: 1556
+    dynamic_effect_feature_size: 33
+  card_encoder:
+    d_model: 768
+    hidden_dim: null
+    dropout: 0.0
+    embedding_l2: 1.0e-5
+    feature_table_path: outputs/cards/static_features/card_static_features.npy
+    feature_table_mmap_mode: c
+  value_hidden_dim: 256
+  opponent_card_classes: 1267
+  effect_feature_size: 33
+run:
+  version: dev
+  output_root: outputs
+output_dir: null
+device: auto
+seed: 0
+epochs: 1
+learning_rate: 3.0e-4
+warmup_steps: 0
+weight_decay: 1.0e-4
+gradient_clip_norm: 1.0
+value_loss_weight: 0.25
+prize_diff_loss_weight: 0.02
+opponent_card_loss_weight: 0.05
+opponent_hand_loss_weight: 0.05
+chosen_effect_loss_weight: 0.05
+max_train_batches_per_epoch: null
+max_validation_batches: 128
+log_every_batches: 50
+initial_weights_checkpoint: null
+evaluate_initial_weights: false
+resume_from_checkpoint: null
+auto_resume: true
+accelerator: auto
+devices: auto
+precision: 32-true
+enable_progress_bar: true
+checkpoints:
+  save_runtime_last: true
+  save_runtime_best: true
+  save_lightning_last: true
+  save_lightning_best: false
+  lightning_last_every_n_train_steps: 2000
+loguru:
+  enabled: true
+  level: INFO
+  console_enabled: true
+  file_enabled: true
+  file_path: null
+  rotation: 256 MB
+  retention: 5
+  enqueue: true
+  serialize: false
+tensorboard:
+  enabled: true
+  save_dir: null
+  name: tensorboard
+  version: ""
+  default_hp_metric: false
+hydra:
+  run:
+    dir: .
+  output_subdir: null

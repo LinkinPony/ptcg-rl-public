@@ -1,0 +1,58 @@
+# @package _global_
+agent:
+  deck_path: data/sample_submission/deck.csv
+  checkpoint_path: null
+  seed: 0
+  default_remaining_overage_time: 600.0
+  min_budget_seconds: 0.2
+  max_budget_seconds: 10.0
+  low_overage_seconds: 60.0
+  critical_overage_seconds: 10.0
+  min_remaining_decisions: 20
+  decision_history_size: 64
+  prewarm_on_startup: true
+  prewarm_engine: false
+  prewarm_checkpoint: true
+  prewarm_policy_forward: false
+  belief:
+    enabled: true
+    top_k: 16
+    deck_signature_summary_path: null
+    prior_top_n: 200
+    prior_min_games: 1
+    prior_match_bonus: 0.35
+  search:
+    enabled: true
+    conservative_override_enabled: true
+    worlds: 3
+    top_k: 4
+    manual_coin: false
+    sampler:
+      mode: archetype
+      placeholder_opponent_deck_card_id: 1072
+      placeholder_opponent_hand_card_id: 1
+      placeholder_opponent_prize_card_id: 1
+      strict_own_deck_counts: false
+      prior_deck_signature_summary_path: null
+      prior_top_n: 200
+      prior_min_games: 1
+      prior_match_bonus: 0.35
+    macro:
+      mode: disabled
+      worlds: 3
+      top_k: 4
+      exploration_actions: 1
+      forced_step_cap: 12
+      continuation_step_cap: 8
+      node_cap: 64
+      manual_coin: false
+      budget:
+        bank_limit_seconds: 180.0
+        hard_reserve_seconds: 180.0
+        taper_window_seconds: 120.0
+        uninterruptible_guard_seconds: 1.5
+        return_guard_seconds: 0.1
+        whole_act_limit_seconds: 12.0
+        ordinary_main_quota_seconds: 2.5
+        first_high_value_main_quota_seconds: 8.0
+        later_high_value_main_quota_seconds: 2.0

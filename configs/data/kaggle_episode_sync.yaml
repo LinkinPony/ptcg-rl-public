@@ -1,0 +1,19 @@
+# @package _global_
+source_index: kaggle/pokemon-tcg-ai-battle-episodes-index
+index_dir: data/external/kaggle_top_episodes_index/latest
+replay_root: data/external/kaggle_top_episodes_daily
+dates: []
+date_selection: latest_missing
+refresh_index: true
+dry_run: false
+force: false
+kaggle_binary: kaggle
+archive_after_sync: true
+archive_root: data/external/kaggle_top_episodes_archives
+archive_keep_raw_dates: 2
+archive_compression_level: 1
+zstd_binary: zstd
+hydra:
+  run:
+    dir: .
+  output_subdir: null

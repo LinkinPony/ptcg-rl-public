@@ -1,0 +1,24 @@
+# @package _global_
+model:
+  state_encoder:
+    d_model: 768
+    num_layers: 12
+    attention_heads: 12
+    feedforward_dim: 3072
+    dropout: 0.0
+  policy:
+    d_model: 768
+    hidden_dim: null
+    dropout: 0.0
+    max_attack_id: 1556
+    dynamic_effect_feature_size: 33
+  card_encoder:
+    d_model: 768
+    hidden_dim: null
+    dropout: 0.0
+    embedding_l2: 1.0e-5
+    feature_table_path: outputs/cards/static_features/card_static_features.npy
+    feature_table_mmap_mode: c
+  value_hidden_dim: 256
+  opponent_card_classes: 1267
+  effect_feature_size: 33

@@ -1,0 +1,119 @@
+# @package _global_
+# Fresh-run example, not a historical resume profile.
+trainer: simple_stateless
+run:
+  version: example
+  output_root: outputs
+device: cuda
+model:
+  architecture: generalist_sequence_v3
+  d_model: 512
+  num_layers: 23
+  attention_heads: 8
+  feedforward_dim: 1024
+  scratch_tokens: 8
+  dropout: 0.0
+  norm_first: true
+  activation: gelu
+  option_comparator_layers: 1
+  option_entity_slots: 2
+  deck_size: 60
+  deck_hidden_dim: 512
+  exact_residual_bottleneck_dim: 64
+  policy_output_gain: 0.01
+  belief_target_semantics: unidentified_cards_sparse_v1
+  public_deck_catalog_fingerprint: 8980215c4c807988788925ee494134a1aab1a4ab28523a06d2b1d01b91e0ea9b
+  card_encoder:
+    d_model: 512
+    hidden_dim: 512
+    dropout: 0.0
+    embedding_l2: 1.0e-05
+    feature_table_path: outputs/cards/static_features/card_static_features.npy
+    feature_table_mmap_mode: c
+  exact_routes: []
+  resolved_registry_sha256: null
+  family_routes: []
+  resolved_family_registry_sha256: null
+  export_mode: routed
+  sequence:
+    architecture_version: 1
+    contract_fingerprint: 6c1bd42a24cf89c96f3485311d3deda073babb1901695b4e7c6d3fc2a8af82df
+    public_event_schema_fingerprint: f921afce6cbe8b4f6eb0c5740f49ea1bb1d718bfb913efa1bda1be135616435f
+    d_model: 512
+    num_layers: 4
+    attention_heads: 8
+    feedforward_dim: 1024
+    max_context_blocks: 192
+    learner_target_blocks: 16
+    dropout: 0.0
+    serial_hash_buckets: 512
+    attack_hash_buckets: 2048
+    engine_facts:
+      enabled: true
+      worlds: 2
+      seed: 20260731
+      manual_coin: true
+      require_byte_identical_worlds: true
+      sampler:
+        mode: archetype
+        placeholder_opponent_deck_card_id: 1072
+        placeholder_opponent_hand_card_id: 1
+        placeholder_opponent_prize_card_id: 1
+        strict_own_deck_counts: false
+        prior_deck_signature_summary_path: null
+        prior_deck_signature_summary_sha256: null
+        prior_top_n: 200
+        prior_min_games: 1
+        prior_match_bonus: 0.35
+private_deck_registry:
+  decks:
+  - label: hydrapple_1628cfd93d1e
+    path: configs/decks/1628cfd93d1e.csv
+    expert_id: 5c75158d6777e4d8032a19509dfb3222c8fd8e0a4e3f78f59a767cf412d6e405
+    family_id: 446910d21ffa2fdafe418fefc313aee4bfa10be41a169f3919eecb3062c58ff8
+  - label: dragapult_13f8a7262a7b
+    path: configs/decks/13f8a7262a7b.csv
+    expert_id: 30c446faf574dbfb57a5e439598aa2c9226e6a385b716311eb87df0adfcc6055
+    family_id: 65c9d8b8f8cbf69582e745fe269e462738ca4bae4d32fb0c0f9b4a5227796ee1
+public_deck_catalog:
+  manifest_path: data/external/final/public_catalog/manifest.json
+  catalog_fingerprint: 8980215c4c807988788925ee494134a1aab1a4ab28523a06d2b1d01b91e0ea9b
+collection:
+  backend: native
+  training_updates: 1000
+  concurrent_games: 16
+  fragment_horizon: 192
+  fragments_per_part: 16
+  maximum_engine_steps: 4096
+  checkpoint_interval_updates: 10
+  seed: 0
+  native_sequence_rollout_precision: bf16
+deck_balance:
+  rolling_window_decisions: 16384
+  assignment_seed: 0
+curriculum:
+  lane_mix:
+    mirror: 1.0
+    pfsp: 0.0
+    scripted: 0.0
+  assignment_seed: 0
+  anchors: []
+  scripted_manifest_path: configs/rl/scripted/example.json
+  scripted_manifest_fingerprint: e73f17621d98427817d6500ede8ec508daca30c4aff7a48a1e9beb3bc1697096
+  scripted:
+  - opponent_id: example_random
+    opponent_name: random
+    artifact_fingerprint: 202dc8bf8581dbf654f0ebf226c31720e9e97444b7d8b63d1a6ddd762f7a38ef
+    exact_deck_path: configs/decks/1628cfd93d1e.csv
+    exact_deck_digest: f39b7a1dd837f52695463b013b74eaf5e53d2293a545d366a41d161dca6b1cd1
+ppo:
+  learning_rate: 1.0e-05
+  warmup_updates: 10
+  total_updates: 1000
+  microbatch_decisions: 64
+  homogeneous_min_decisions: 16
+  maximum_version_age: 0
+hydra:
+  run:
+    dir: .
+  output_subdir: null

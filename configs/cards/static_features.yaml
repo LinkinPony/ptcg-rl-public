@@ -1,0 +1,10 @@
+# @package _global_
+output_path: outputs/cards/static_features/card_static_features.npz
+manifest_path: null
+parquet_path: null
+npy_path: outputs/cards/static_features/card_static_features.npy
+num_card_ids: 1267
+hydra:
+  run:
+    dir: .
+  output_subdir: null

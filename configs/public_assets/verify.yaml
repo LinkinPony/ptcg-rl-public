@@ -1,0 +1,6 @@
+# @package _global_
+manifest_path: submissions/manifest.json
+hydra:
+  run:
+    dir: .
+  output_subdir: null

@@ -1,0 +1,26 @@
+# @package _global_
+source_index: kaggle/pokemon-tcg-ai-battle-episodes-index
+index_dir: data/external/kaggle_top_episodes_index/latest
+replay_root: data/external/kaggle_top_episodes_daily
+dates: []
+refresh_index: true
+sync_missing: true
+force_download: false
+kaggle_binary: kaggle
+output_dir: outputs/kaggle_steps/full
+force_extract: false
+extract_workers: 1
+replay_workers_per_date: 1
+max_episodes_per_date: null
+rows_per_shard: 50000
+drop_forced_actions: true
+normalize_unordered_actions: true
+fast_prefix_bytes: 65536
+parser_chunk_size: 1048576
+compression: zstd
+validate_shards: true
+fail_on_missing_replays: true
+hydra:
+  run:
+    dir: .
+  output_subdir: null

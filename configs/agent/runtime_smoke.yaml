@@ -1,0 +1,15 @@
+# @package _global_
+deck0_path: data/sample_submission/deck.csv
+deck1_path: data/sample_submission/deck.csv
+checkpoint0_path: null
+checkpoint1_path: null
+max_steps: 10000
+max_total_action_seconds: 600.0
+seed: 0
+prewarm_engine: true
+fail_on_truncated: true
+output_path: outputs/agent/runtime_smoke/summary.json
+hydra:
+  run:
+    dir: .
+  output_subdir: null

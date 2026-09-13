@@ -1,0 +1,38 @@
+# Local environments, credentials, and generated outputs.
+.env
+.env.*
+!.env.example
+.venv/
+__pycache__/
+*.py[cod]
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+.hydra/
+*.log
+*.egg-info/
+build/
+dist/
+/outputs/
+/tmp/
+/data/
+/third_party/
+node_modules/
+*.so
+*.dll
+*.dylib
+*.o
+*.d
+*.pt
+*.pth
+*.npz
+*.parquet
+# Private report material must not enter this distribution.
+docs/writeup/
+configs/writeup/
+src/tools/writeup/
+src/native/writeup/
+
+# Private diagnostic inputs and locally generated native build provenance.
+/src/tools/kaggle_probe/
+/src/native/cg_probe/libcg_probe.kaggle.json

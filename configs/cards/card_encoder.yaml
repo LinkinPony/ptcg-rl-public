@@ -1,0 +1,7 @@
+# @package _global_
+d_model: 768
+hidden_dim: null
+dropout: 0.0
+embedding_l2: 1.0e-5
+feature_table_path: outputs/cards/static_features/card_static_features.npy
+feature_table_mmap_mode: c

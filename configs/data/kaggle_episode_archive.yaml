@@ -1,0 +1,15 @@
+# @package _global_
+replay_root: data/external/kaggle_top_episodes_daily
+archive_root: data/external/kaggle_top_episodes_archives
+index_manifest: data/external/kaggle_top_episodes_index/latest/manifest.csv
+mode: archive
+dates: []
+keep_raw_dates: 2
+remove_source: true
+compression_level: 1
+zstd_binary: zstd
+dry_run: false
+hydra:
+  run:
+    dir: .
+  output_subdir: null

@@ -1,0 +1,63 @@
+{
+  "format": "ptcg_public_submissions_v1",
+  "submissions": [
+    {
+      "archive_metadata": "Normalized timestamps, ownership, and file modes.",
+      "artifact_kind": "sanitized_submission",
+      "bytes": 161796494,
+      "checkpoint": "v1032",
+      "checkpoint_sha256": "6a70069bec3c088e3c67792b2864cb3ccbc841a5184bb7588fe5cc70c6fada54",
+      "deck_hash": "1628cfd93d1e",
+      "deck_name": "Hydrapple",
+      "deck_sha256": "187105ec797db82eeb453661020d0505e87e5780f5b16c69f0bda48b0234edd2",
+      "external_requirements": [
+        "licensed cg SDK",
+        "licensed native probe build"
+      ],
+      "modified_members": [
+        "ptcg_rl/evaluation/distributed_hosts.py",
+        "ptcg_rl/rl/training.py"
+      ],
+      "original_archive_sha256": "9233edf219b07c907517f303cad79d05603ddecc8d6a2431ad663399a6642b9a",
+      "original_bundle_fingerprint": "be7d79c09e74441b1fd9bf8cbb6fdc6a99daddd31ff3188c424333e9d369f2d9",
+      "original_upload_bytes": false,
+      "path": "submissions/55564817_1628cfd93d1e.tar.gz",
+      "removed_member_count": 70,
+      "sha256": "6a631e2ae905b8a9aaa86b4447cac3ee7efcb6fc46eee7907685966feb8315e8",
+      "source_changes": "Removed internal remote-host paths from deployment defaults.",
+      "submission_fingerprint": "ef1829332a5b3a7696afd8ed4c0319fe27591094d1c8e651e219e98f227467eb",
+      "submission_ref": "55564817",
+      "submitted_at_utc": "2026-08-16T23:14:25.873000Z",
+      "unchanged_member_count": 679
+    },
+    {
+      "archive_metadata": "Normalized timestamps, ownership, and file modes.",
+      "artifact_kind": "sanitized_submission",
+      "bytes": 161795559,
+      "checkpoint": "v1032",
+      "checkpoint_sha256": "567b200f3b25774afea1fbb6b68f21fd15c4ab89ce3c46d79c3590b192a6d445",
+      "deck_hash": "13f8a7262a7b",
+      "deck_name": "Dragapult",
+      "deck_sha256": "2dd47acc0daff8267a92bd934a5ec3fce73c6f9deed4f83c567f8c5d66ebd879",
+      "external_requirements": [
+        "licensed cg SDK",
+        "licensed native probe build"
+      ],
+      "modified_members": [
+        "ptcg_rl/evaluation/distributed_hosts.py",
+        "ptcg_rl/rl/training.py"
+      ],
+      "original_archive_sha256": "9f8532d571a76327ee0a51192ee83c677c7f84d4c81873021394be45111da8d0",
+      "original_bundle_fingerprint": "9c9fa000409f80c01739577dc97ad0dfe2140ca3dad0b872f64b9480bd9e4c17",
+      "original_upload_bytes": false,
+      "path": "submissions/55565209_13f8a7262a7b.tar.gz",
+      "removed_member_count": 70,
+      "sha256": "24352fee4d1cc24981ceaf00e7e867610a20eb7122874dbdab0aff495b87204b",
+      "source_changes": "Removed internal remote-host paths from deployment defaults.",
+      "submission_fingerprint": "a310b167ed6677ee5a5d0204bf80be33f71accc325c1594c4229e249cd35b36d",
+      "submission_ref": "55565209",
+      "submitted_at_utc": "2026-08-16T23:35:31.950000Z",
+      "unchanged_member_count": 679
+    }
+  ]
+}

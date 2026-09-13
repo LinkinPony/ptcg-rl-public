@@ -1,0 +1,81 @@
+"""Minimal immutable opponent-pool planning and commit core."""
+
+from ptcg_rl.rl.opponent_pool.commit import (
+    OpponentOutcome,
+    OutcomeStatus,
+    commit_quota_window,
+    commit_window,
+)
+from ptcg_rl.rl.opponent_pool.controller import (
+    OpponentPoolController,
+    OpponentPoolControllerError,
+)
+from ptcg_rl.rl.opponent_pool.models import (
+    STRATUM_ORDER,
+    ActiveMatchup,
+    CandidateSeat,
+    OpponentArtifact,
+    OpponentRoute,
+    PoolEntry,
+    PoolRevision,
+    QuotaStratum,
+    RuntimeKind,
+    SemanticRole,
+)
+from ptcg_rl.rl.opponent_pool.planner import (
+    ArtifactCapacity,
+    OpponentAssignment,
+    OpponentQuotaCell,
+    PlannerPolicy,
+    QuotaWindowPlan,
+    StratumPolicy,
+    WindowPlan,
+    plan_adaptive_quota_window_for_candidate_counts,
+    plan_quota_window_for_candidate_counts,
+    plan_window,
+    plan_window_for_candidate_cells,
+)
+from ptcg_rl.rl.opponent_pool.state import (
+    LeagueState,
+    MatchupStat,
+    RevisionTransitionReceipt,
+    RevisionTransitionRequest,
+    RevisionTransitionResult,
+    transition_revision,
+)
+
+__all__ = [
+    "STRATUM_ORDER",
+    "ActiveMatchup",
+    "ArtifactCapacity",
+    "CandidateSeat",
+    "LeagueState",
+    "MatchupStat",
+    "OpponentArtifact",
+    "OpponentAssignment",
+    "OpponentOutcome",
+    "OpponentQuotaCell",
+    "OpponentPoolController",
+    "OpponentPoolControllerError",
+    "OpponentRoute",
+    "OutcomeStatus",
+    "PlannerPolicy",
+    "PoolEntry",
+    "PoolRevision",
+    "QuotaStratum",
+    "QuotaWindowPlan",
+    "RevisionTransitionReceipt",
+    "RevisionTransitionRequest",
+    "RevisionTransitionResult",
+    "RuntimeKind",
+    "SemanticRole",
+    "StratumPolicy",
+    "WindowPlan",
+    "commit_window",
+    "commit_quota_window",
+    "plan_adaptive_quota_window_for_candidate_counts",
+    "plan_quota_window_for_candidate_counts",
+    "plan_window",
+    "plan_window_for_candidate_cells",
+    "transition_revision",
+]
